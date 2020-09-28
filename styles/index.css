@@ -1,0 +1,142 @@
+html {
+  font-family: 'Roboto', sans-serif;
+  background-color: gainsboro;
+  color: #444;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0.3em;
+}
+
+h3 {
+  font-size: 1.3em;
+  padding: 0.5em 0;
+}
+
+h4 {
+  font-size: 1em;
+  margin-bottom: 1.5em;
+}
+
+h5 {
+  font-size: 0.7em;
+  font-weight: bold;
+  padding: 0.2em;
+}
+
+body {
+  display: grid;
+  grid-template: 250px 1fr / 380px 1fr; /* rows / columns */
+  grid-template-areas:
+    'header header'
+    'aside main';
+}
+
+/* ------------------------- */
+
+.miniIcon {
+  width: 1em;
+  height: 1em;
+  margin: 0.2em;
+  opacity: 0.9;
+}
+
+.littleIcon {
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0 0.2em;
+  opacity: 0.7;
+}
+
+.mediumIcon {
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0 0.5em;
+  opacity: 0.7;
+}
+
+.mediumIcon:hover {
+  opacity: 0.9;
+}
+
+/* ------------------------- */
+
+header {
+  grid-area: header;
+  background-color: blue;
+  background-image: url('../assets/banner.png');
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* ------------------------- */
+
+aside {
+  grid-area: aside;
+  padding: 20px;
+}
+
+.asideSection {
+  width: 100%;
+  border-top: 1px solid #ddd;
+  padding: 0 1em;
+  margin-bottom: 1em;
+}
+
+.technoBullet {
+  display: flex;
+  align-items: center;
+  height: 2em;
+  background-color: #edf1f7;
+  border-radius: 0.75em;
+  padding: 0.2em 0.5em;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#asideContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 500px;
+  margin-top: -120px;
+  background-color: white;
+  box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
+}
+
+#pictureAside {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-top: -60px;
+  margin-bottom: 20px;
+  box-shadow: 0 0.45rem 0.9rem 0 rgba(44, 51, 73, 0.2);
+}
+
+#asideLinkBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+  padding: 1em;
+}
+
+#technoSection {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ------------------------- */
+
+main {
+  grid-area: main;
+  border: 1px solid blue;
+}
+
+/* ------------------------- */
