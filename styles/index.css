@@ -43,10 +43,14 @@ h6 {
 
 body {
   display: grid;
-  grid-template: 250px 1fr / minmax(380px, 1fr) 3fr; /* rows / columns */
+  grid-template: 250px 1fr / minmax(380px, 1fr) 4fr; /* rows / columns */
   grid-template-areas:
     'header header'
     'aside main';
+}
+
+a:link {
+  color: red;
 }
 
 a:visited {
@@ -115,9 +119,12 @@ a:active {
 
 header {
   grid-area: header;
-  background-color: blue;
+
   background-image: url('../assets/banner.png');
   background-size: cover;
+  background-position: center;
+  border-top: 5px solid hotpink;
+  border-bottom: 5px solid #85b5ff;
   overflow: hidden;
 }
 
@@ -150,6 +157,23 @@ aside {
   margin-bottom: 10px;
 }
 
+.asideTitle {
+  position: relative;
+  margin-left: 0.8em;
+}
+
+.asideTitle::after {
+  position: absolute;
+  bottom: 0.7em;
+  left: -0.8em;
+  content: ' ';
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  background-color: hotpink;
+  border-radius: 50%;
+}
+
 #asideContainer {
   display: flex;
   flex-direction: column;
@@ -158,13 +182,14 @@ aside {
   min-height: 500px;
   margin-top: -120px;
   background-color: white;
+  border-radius: 20px;
   box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
 }
 
 #pictureAside {
-  width: 40%;
+  width: 50%;
   min-width: 180px;
-  height: 40%;
+  height: 50%;
   min-height: 180px;
   object-fit: contain;
   border-radius: 50%;
@@ -192,6 +217,7 @@ aside {
 
 main {
   grid-area: main;
+  margin-top: 1em;
 }
 
 .projectContainer {
@@ -216,6 +242,7 @@ main {
   margin-bottom: 20px;
   margin-right: 20px;
   background-color: #bbb;
+  border-radius: 10px;
   box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
   cursor: pointer;
 }
