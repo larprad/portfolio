@@ -1,7 +1,11 @@
 html {
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f4;
+  /* background-image: url('https://www.transparenttextures.com/patterns/old-mathematics.png'); */
+  background-image: url('https://www.transparenttextures.com/patterns/inspiration-geometry.png');
+
   color: #444;
+  line-height: 1.5rem;
 }
 
 h1 {
@@ -42,19 +46,24 @@ h6 {
 }
 
 body {
+  position: relative;
   display: grid;
-  grid-template: 250px 1fr / minmax(380px, 1fr) 4fr; /* rows / columns */
+  grid-template: 250px 1fr / minmax(360px, 1fr) 4fr; /* rows / columns */
   grid-template-areas:
     'header header'
     'aside main';
 }
 
+a {
+  text-overflow: ellipsis;
+}
+
 a:link {
-  color: red;
+  color: #4f6a94;
 }
 
 a:visited {
-  color: green;
+  color: #4f6a94;
 }
 
 a:hover {
@@ -123,8 +132,8 @@ header {
   background-image: url('../assets/banner.png');
   background-size: cover;
   background-position: center;
-  border-top: 5px solid hotpink;
-  border-bottom: 5px solid #85b5ff;
+  /* border-top: 2px solid hotpink; */
+  border-bottom: 10px solid #85b5ff;
   overflow: hidden;
 }
 
@@ -164,7 +173,7 @@ aside {
 
 .asideTitle::after {
   position: absolute;
-  bottom: 0.7em;
+  bottom: 0.85em;
   left: -0.8em;
   content: ' ';
   display: block;
@@ -179,9 +188,9 @@ aside {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 500px;
   margin-top: -120px;
   background-color: white;
+
   border-radius: 20px;
   box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
 }
@@ -189,8 +198,10 @@ aside {
 #pictureAside {
   width: 50%;
   min-width: 180px;
+  max-width: 250px;
   height: 50%;
   min-height: 180px;
+  max-height: 250px;
   object-fit: contain;
   border-radius: 50%;
   margin-top: -60px;
@@ -235,14 +246,15 @@ main {
   flex-direction: column;
   padding: 20px 20px 10px 20px;
   justify-content: space-between;
-  min-width: 360px;
+  min-width: 380px;
   flex-basis: 25%;
-  min-height: 360px;
+  min-height: 380px;
   flex-grow: 1;
   margin-bottom: 20px;
   margin-right: 20px;
   background-color: #bbb;
   border-radius: 10px;
+  border-top-right-radius: 0;
   box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
   cursor: pointer;
 }
@@ -257,6 +269,7 @@ main {
   width: 100%;
   height: 100%;
   background: linear-gradient(180deg, #5989e5, #37cfdc);
+
   opacity: 0;
   transition: all 0.25s;
 }
@@ -305,7 +318,6 @@ main {
 .tileText {
   text-shadow: 2px 2px 8px #000;
   color: white;
-  /* background-color: rgba(255, 255, 255, 0.9); */
   overflow: hidden;
   opacity: 0;
   transition: all 0.25s;
@@ -314,6 +326,7 @@ main {
 .tileTechno {
   z-index: 10;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .tileTriangle {
@@ -368,7 +381,7 @@ main {
 
 @media screen and (max-width: 800px) {
   body {
-    grid-template: 250px 1fr 3fr /1fr; /* rows / columns */
+    grid-template: 250px 1fr 3fr / 100%; /* rows / columns */
     grid-template-areas:
       'header'
       'aside'
@@ -377,5 +390,10 @@ main {
 
   main {
     margin-left: 20px;
+  }
+
+  .projectTile {
+    flex-basis: 80%;
+    min-width: 300px;
   }
 }

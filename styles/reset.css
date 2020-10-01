@@ -102,9 +102,6 @@ section {
   display: block;
   box-sizing: border-box;
 }
-body {
-  line-height: 1;
-}
 ol,
 ul {
   list-style: none;

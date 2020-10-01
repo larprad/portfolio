@@ -1,0 +1,136 @@
+.popupSubTitle {
+  font-size: 1em;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.popupDescDiv {
+  margin-top: 20px;
+  padding: 0 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  min-height: 40%;
+}
+
+.popupLink {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.popupIntroDiv {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  /* border-bottom: 1px solid #ddd; */
+}
+
+.popupIntroContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 50%;
+  padding-top: 20px;
+}
+
+#popup {
+  z-index: 20;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.3s ease;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.404);
+  /* visibility: hidden; */
+}
+
+#innerContainer {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
+  border-radius: 20px;
+  animation: popup 0.1s;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@keyframes popup {
+  from {
+    width: 60%;
+    height: 60%;
+    opacity: 0;
+  }
+  to {
+    width: 80%;
+    height: 80%;
+    opacity: 1;
+  }
+}
+
+#closePopup {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 4%;
+  padding: 10px 20px;
+  outline: none;
+  appearance: none;
+  font-size: 1em;
+  color: inherit;
+  border-radius: 5px;
+  background: rgb(236, 236, 236);
+  border: 0px;
+  cursor: pointer;
+  box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
+}
+
+#closePopup:hover {
+  background: rgb(211, 211, 211);
+}
+
+#popupTitle {
+  font-size: 2em;
+  margin: 0;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+#popupTechnoSection {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  #innerContainer {
+    width: 95%;
+    height: 80%;
+    margin: 0;
+  }
+
+  @keyframes popup {
+    from {
+      width: 80%;
+      height: 70%;
+      opacity: 0;
+    }
+    to {
+      width: 95%;
+      height: 80%;
+      opacity: 1;
+    }
+  }
+}

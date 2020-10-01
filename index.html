@@ -14,9 +14,27 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
     <script src="./index.js" defer></script>
+    <script src="./scripts/source.js" defer></script>
     <title>Loïc La Prairie | Portfolio</title>
   </head>
   <body>
+    <div id="popup">
+      <div id="innerContainer">
+        <h2 id="popupTitle"></h2>
+        <div class="popupIntroDiv">
+          <div class="popupIntroContainer">
+            <h4 class="popupSubTitle">Technologies</h4>
+            <div id="popupTechnoSection"></div>
+          </div>
+          <div class="popupIntroContainer" id="popupLinkSection"></div>
+        </div>
+        <div class="popupDescDiv">
+          <h4 class="popupSubTitle">Description</h4>
+          <p id="popupDescription"></p>
+        </div>
+        <button id="closePopup">Quitter</button>
+      </div>
+    </div>
     <header></header>
     <aside>
       <div id="asideContainer">
@@ -161,7 +179,7 @@
         <!-- ||||||| -->
         <!-- OHANAMI -->
         <!-- ||||||| -->
-        <div class="projectTile">
+        <div id="ohanami" class="projectTile">
           <div class="tileVideoContainer">
             <video autoplay muted loop>
               <source src="assets/videos/ohanami.mp4" type="video/mp4" />
@@ -201,7 +219,7 @@
         <!-- ||||||| -->
         <!-- ONEWORD -->
         <!-- ||||||| -->
-        <div class="projectTile">
+        <div id="oneWordPlease" class="projectTile">
           <div class="tileVideoContainer">
             <video autoplay muted loop>
               <source src="assets/videos/oneWordPlease.mp4" type="video/mp4" />
