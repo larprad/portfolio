@@ -57,13 +57,75 @@ function handleTileClick(e) {
   }
 }
 
+function initProjectTiles() {
+  const projects = Object.entries(apps).map((x) => generateOneTile(x[0]));
+  const projectDiv = document.getElementById('projectContainer');
+  projectDiv.innerHTML = projects.join('');
+}
+
+function generateOneTile(tileId) {
+  console.log('tile', tileId);
+  const tile = {
+    title: apps[tileId].title,
+    smallDescription: apps[tileId].smallDescription,
+    directLink: apps[tileId].link[0][1],
+    githubLink: apps[tileId].link[1][1],
+    video: apps[tileId].video,
+    techno: apps[tileId].techno,
+    technoHTML() {
+      return this.techno
+        .map(
+          (index) => `<div class="technoBullet boxShadow">
+      <img src=${technoSource[index][1]} alt=${technoSource[index][0]} class="miniIcon" />
+      <h5>${technoSource[index][0]}</h5>
+    </div>`
+        )
+        .join('');
+    },
+  };
+
+  return `
+  <div id=${tileId} class="projectTile">
+          <div class="tileVideoContainer">
+            <video autoplay muted loop>
+              <source src=${tile.video} type="video/mp4" />
+            </video>
+          </div>
+          <div class="tileTriangle boxShadow"></div>
+          <a href=${tile.githubLink} target="blank" class="tileGithub"
+            ><img src="./assets/icons/github.svg" alt="github" class="biggerIcon"
+          /></a>
+          <div class="tileTextContainer">
+            <div class="tileTitle">
+              <h1>${tile.title}</h1>
+              <a href=${tile.directLink} class="playButton" target="blank"
+                ><img src="./assets/icons/external-link.svg"
+              /></a>
+            </div>
+            <p class="tileText">
+              ${tile.smallDescription}
+            </p>
+          </div>
+          <div class="tileTechno">
+            ${tile.technoHTML()}
+          </div>
+        </div>
+  `;
+}
+
 function handleClosePopup(e) {
-  if (e.target.id != 'innerContainer') {
+  if (e.target.id === 'popup' || e.target.id === 'closePopup') {
     popup.hide();
   }
 }
 
-let projectTiles = Array.from(document.getElementsByClassName('projectTile'));
-projectTiles.forEach((x) => x.addEventListener('click', handleTileClick));
-document.getElementById('closePopup').addEventListener('click', handleClosePopup);
-document.getElementById('popup').addEventListener('click', handleClosePopup);
+function setPopupListener() {
+  let projectTiles = Array.from(document.getElementsByClassName('projectTile'));
+  projectTiles.forEach((x) => x.addEventListener('click', handleTileClick));
+  document.getElementById('popup').addEventListener('click', handleClosePopup);
+}
+
+// -----------------------------------
+
+initProjectTiles();
+setPopupListener();
