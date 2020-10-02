@@ -1,43 +1,3 @@
-.popupSubTitle {
-  font-size: 1em;
-  font-weight: bold;
-  opacity: 0.5;
-}
-
-.popupDescDiv {
-  margin-top: 20px;
-  padding: 0 20px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
-  min-height: 40%;
-}
-
-.popupLink {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 5px 0;
-}
-
-.popupIntroDiv {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 0 20px;
-  flex-wrap: wrap;
-  /* border-bottom: 1px solid #ddd; */
-}
-
-.popupIntroContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  min-width: 50%;
-  padding-top: 20px;
-}
-
 #popup {
   z-index: 20;
   position: fixed;
@@ -76,6 +36,77 @@
     height: 80%;
     opacity: 1;
   }
+}
+
+.popupIntroDiv {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 10px;
+  flex-wrap: wrap;
+}
+
+.popupIntroContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 50%;
+  padding: 0 10px;
+  padding-top: 20px;
+}
+
+.popupMainDiv {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.popupMainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 50%;
+  padding: 0 10px;
+  flex-grow: 1;
+  min-width: 300px;
+  padding-top: 20px;
+  overflow-y: auto;
+}
+
+#popupImages {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.popupImage {
+  width: 250px;
+  height: auto;
+  flex-grow: 1;
+  margin: 10px;
+}
+
+.popupSubTitle {
+  font-size: 1em;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.popupLink {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 5px 0;
 }
 
 #closePopup {
@@ -117,19 +148,24 @@
 @media screen and (max-width: 800px) {
   #innerContainer {
     width: 95%;
-    height: 80%;
+    height: 90%;
     margin: 0;
+    margin-bottom: 30px;
+  }
+
+  #closePopup {
+    bottom: 5px;
   }
 
   @keyframes popup {
     from {
       width: 80%;
-      height: 70%;
+      height: 80%;
       opacity: 0;
     }
     to {
       width: 95%;
-      height: 80%;
+      height: 90%;
       opacity: 1;
     }
   }

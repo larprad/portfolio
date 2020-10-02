@@ -28,10 +28,17 @@
           </div>
           <div class="popupIntroContainer" id="popupLinkSection"></div>
         </div>
-        <div class="popupDescDiv">
-          <h4 class="popupSubTitle">Description</h4>
-          <p id="popupDescription"></p>
+        <div class="popupMainDiv">
+          <div class="popupMainContainer">
+            <h4 class="popupSubTitle">Description</h4>
+            <p id="popupDescription"></p>
+          </div>
+          <div class="popupMainContainer">
+            <h4 class="popupSubTitle">Images</h4>
+            <div id="popupImages"></div>
+          </div>
         </div>
+
         <button id="closePopup">Quitter</button>
       </div>
     </div>
@@ -84,8 +91,16 @@
             </div>
           </div>
         </section>
-        <section class="asideSection">
+        <section id="asideXpSection" class="asideSection minimizeSection">
           <h3 class="asideTitle">EXPERIENCES</h3>
+          <button id="buttonAsideXp">
+            <img
+              id="buttonAsideXpIcon"
+              class="buttonAsideXpIcon"
+              src="./assets/icons/double-arrow-bottom.svg"
+              alt="see more"
+            />
+          </button>
           <div class="xpSection">
             <div class="xpTitle">
               <h6 class="lowYPadding">2019 - 2020</h6>

@@ -6,6 +6,7 @@ const popup = {
   title: document.getElementById('popupTitle'),
   description: document.getElementById('popupDescription'),
   techno: document.getElementById('popupTechnoSection'),
+  image: document.getElementById('popupImages'),
   link: document.getElementById('popupLinkSection'),
   popupDiv: document.getElementById('popup'),
   hide() {
@@ -38,11 +39,18 @@ const popup = {
     );
     this.link.innerHTML = '<h4 class="popupSubTitle">Liens</h4>' + linkArray.join('');
   },
+  setImages(x, tileName) {
+    const imagesArray = x.map(
+      (index) => `<img class="popupImage" src=${index} alt="${tileName} image" />`
+    );
+    this.image.innerHTML = imagesArray.join('');
+  },
   clean() {
     this.title.innerHTML = '';
     this.description.innerHTML = '';
     this.link.innerHTML = '';
     this.techno.innerHTML = '';
+    this.image.innerHTML = '';
   },
 };
 
@@ -53,6 +61,7 @@ function handleTileClick(e) {
     popup.setDescription(apps[tile].description);
     popup.setTechno(apps[tile].techno);
     popup.setLink(apps[tile].link);
+    popup.setImages(apps[tile].image, tile);
     popup.show();
   }
 }
@@ -64,12 +73,11 @@ function initProjectTiles() {
 }
 
 function generateOneTile(tileId) {
-  console.log('tile', tileId);
   const tile = {
     title: apps[tileId].title,
     smallDescription: apps[tileId].smallDescription,
-    directLink: apps[tileId].link[0][1],
-    githubLink: apps[tileId].link[1][1],
+    directLink: apps[tileId].link[1][1],
+    githubLink: apps[tileId].link[0][1],
     video: apps[tileId].video,
     techno: apps[tileId].techno,
     technoHTML() {
@@ -124,6 +132,15 @@ function setPopupListener() {
   projectTiles.forEach((x) => x.addEventListener('click', handleTileClick));
   document.getElementById('popup').addEventListener('click', handleClosePopup);
 }
+
+function openXpSection() {
+  const xpSection = document.getElementById('asideXpSection');
+  const button = document.getElementById('buttonAsideXpIcon');
+  xpSection.classList.toggle('minimizeSection');
+  button.classList.toggle('rotate180Button');
+}
+
+document.getElementById('buttonAsideXp').addEventListener('click', openXpSection);
 
 // -----------------------------------
 

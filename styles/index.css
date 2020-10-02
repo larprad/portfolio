@@ -1,15 +1,13 @@
 html {
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f4;
-  /* background-image: url('https://www.transparenttextures.com/patterns/old-mathematics.png'); */
-  background-image: url('https://www.transparenttextures.com/patterns/inspiration-geometry.png');
-
+  background-image: url('../assets/inspiration-geometry.png');
   color: #444;
   line-height: 1.5rem;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: bold;
   color: white;
   margin-bottom: 10px;
@@ -18,30 +16,30 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: bold;
   padding: 0.3em;
 }
 
 h3 {
   display: inline-block;
-  font-size: 1.3em;
+  font-size: 1.3rem;
   padding: 0.5em 0;
 }
 
 h4 {
-  font-size: 1em;
+  font-size: 1rem;
   margin-bottom: 1em;
 }
 
 h5 {
-  font-size: 0.7em;
+  font-size: 0.7rem;
   font-weight: bold;
   padding: 0.2em;
 }
 
 h6 {
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: lighter;
   opacity: 0.5;
 }
@@ -129,11 +127,9 @@ a:active {
 
 header {
   grid-area: header;
-
   background-image: url('../assets/banner.png');
   background-size: cover;
   background-position: center;
-  /* border-top: 2px solid hotpink; */
   border-bottom: 10px solid #85b5ff;
   overflow: hidden;
 }
@@ -145,11 +141,64 @@ aside {
   padding: 20px;
 }
 
+#asideContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: -120px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
+}
+
 .asideSection {
   width: 100%;
+  height: auto;
   border-top: 1px solid #ddd;
   padding: 0 1em;
   margin-bottom: 1em;
+  overflow: hidden;
+}
+
+.minimizeSection {
+  height: 200px;
+}
+
+#buttonAsideXp {
+  appearance: none;
+  border: 5px solid white;
+  border-top: none;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  width: 4em;
+  height: 2em;
+  position: absolute;
+  bottom: -2em;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+
+  /* margin: 0 auto; */
+}
+
+#buttonAsideXp:hover .buttonAsideXpIcon {
+  transform: translateY(0.2em);
+}
+
+.buttonAsideXpIcon {
+  width: 10px;
+  height: 10px;
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
+}
+
+.rotate180Button {
+  transform: rotate(180deg);
 }
 
 .xpSection {
@@ -169,31 +218,19 @@ aside {
 
 .asideTitle {
   position: relative;
-  margin-left: 0.8em;
+  margin-left: 0.6em;
 }
 
 .asideTitle::after {
   position: absolute;
-  bottom: 0.85em;
-  left: -0.8em;
+  bottom: 0.9em;
+  left: -0.6em;
   content: ' ';
   display: block;
-  width: 0.5em;
-  height: 0.5em;
+  width: 0.3em;
+  height: 0.3em;
   background-color: hotpink;
-  border-radius: 50%;
-}
-
-#asideContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-top: -120px;
-  background-color: white;
-
-  border-radius: 20px;
-  box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
+  border-radius: 2px;
 }
 
 #pictureAside {
@@ -223,6 +260,7 @@ aside {
   justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
+  margin-top: 0.4em;
 }
 
 /* ------------------------- */
@@ -248,6 +286,7 @@ main {
   padding: 20px 20px 10px 20px;
   justify-content: space-between;
   min-width: 380px;
+  max-width: 680px;
   flex-basis: 25%;
   min-height: 380px;
   flex-grow: 1;
@@ -272,7 +311,7 @@ main {
   background: linear-gradient(180deg, #5989e5, #37cfdc);
 
   opacity: 0;
-  transition: all 0.25s;
+  transition: all 0.2s ease-in-out;
 }
 
 .projectTile::before {
@@ -321,7 +360,7 @@ main {
   color: white;
   overflow: hidden;
   opacity: 0;
-  transition: all 0.25s;
+  transition: all 0.2s ease-in-out;
 }
 
 .tileTechno {
@@ -359,13 +398,13 @@ main {
   margin-left: 15px;
   margin-bottom: 30px;
   opacity: 0;
-  transition: all 0.1s;
+  transition: all 0.1s ease-in-out;
 }
 
 .playButton:hover {
   -webkit-filter: invert(1) drop-shadow(2px 2px 8px hotpink);
   filter: invert(1) drop-shadow(2px 2px 8px hotpink);
-  transform: rotate(-10deg);
+  transform: rotate(-10deg) ease-in-out;
 }
 
 .tileVideoContainer {
