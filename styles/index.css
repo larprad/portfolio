@@ -44,6 +44,21 @@ h6 {
   opacity: 0.5;
 }
 
+ul {
+  list-style-type: circle;
+  margin-bottom: 1em;
+}
+
+li {
+  list-style: disc outside none;
+  display: list-item;
+  margin: 1em 1em 0 1em;
+}
+
+strong {
+  font-weight: bold;
+}
+
 body {
   position: relative;
   display: grid;
@@ -51,6 +66,7 @@ body {
   grid-template-areas:
     'header header'
     'aside main';
+  overflow: auto;
 }
 
 a {
@@ -133,7 +149,6 @@ header {
   border-bottom: 10px solid #85b5ff;
   overflow: hidden;
 }
-
 /* ------------------------- */
 
 aside {
@@ -182,12 +197,10 @@ aside {
   outline: none;
   transition: all 0.2s ease-in-out;
   background-color: white;
-
-  /* margin: 0 auto; */
 }
 
 #buttonAsideXp:hover .buttonAsideXpIcon {
-  transform: translateY(0.2em);
+  opacity: 0.8;
 }
 
 .buttonAsideXpIcon {
@@ -326,9 +339,9 @@ main {
   background: rgb(0, 0, 0);
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.29735644257703087) 0%,
+    rgba(0, 0, 0, 0.4) 0%,
     rgba(255, 255, 255, 0) 50%,
-    rgba(0, 0, 0, 0.29735644257703087) 100%
+    rgba(0, 0, 0, 0.4) 100%
   );
 }
 
@@ -336,12 +349,7 @@ main {
   opacity: 0.7;
 }
 
-.projectTile:hover .tileText,
-.playButton {
-  opacity: 1;
-}
-
-.projectTile:hover .playButton {
+.projectTile:hover .tileText {
   opacity: 1;
 }
 
@@ -366,7 +374,11 @@ main {
 .tileTechno {
   z-index: 10;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+}
+
+.tileTechno .technoBullet {
+  opacity: 0.7;
 }
 
 .tileTriangle {
@@ -389,24 +401,6 @@ main {
   right: 10px;
 }
 
-.playButton {
-  position: relative;
-  width: 1em;
-  height: 1em;
-  -webkit-filter: invert(1) drop-shadow(2px 2px 8px #000);
-  filter: invert(1) drop-shadow(2px 2px 8px #000);
-  margin-left: 15px;
-  margin-bottom: 30px;
-  opacity: 0;
-  transition: all 0.1s ease-in-out;
-}
-
-.playButton:hover {
-  -webkit-filter: invert(1) drop-shadow(2px 2px 8px hotpink);
-  filter: invert(1) drop-shadow(2px 2px 8px hotpink);
-  transform: rotate(-10deg) ease-in-out;
-}
-
 .tileVideoContainer {
   z-index: 1;
   position: absolute;
@@ -421,7 +415,7 @@ main {
 
 @media screen and (max-width: 800px) {
   body {
-    grid-template: 250px 1fr 3fr / 100%; /* rows / columns */
+    grid-template: 250px auto 3fr / 100%; /* rows / columns */
     grid-template-areas:
       'header'
       'aside'

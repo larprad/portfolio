@@ -14,6 +14,7 @@ const popup = {
   },
   show() {
     this.popupDiv.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; //disable main page scrolling
   },
   setTitle(x) {
     this.title.innerHTML = x;
@@ -55,7 +56,8 @@ const popup = {
 };
 
 function handleTileClick(e) {
-  const tile = e.target.id;
+  let tile;
+  e.target.id ? (tile = e.target.id) : (tile = e.target.offsetParent.id);
   if (tile) {
     popup.setTitle(apps[tile].title);
     popup.setDescription(apps[tile].description);
@@ -93,7 +95,7 @@ function generateOneTile(tileId) {
   };
 
   return `
-  <div id=${tileId} class="projectTile">
+  <div id=${tileId} class="projectTile eventPopup">
           <div class="tileVideoContainer">
             <video autoplay muted loop>
               <source src=${tile.video} type="video/mp4" />
@@ -104,17 +106,14 @@ function generateOneTile(tileId) {
             ><img src="./assets/icons/github.svg" alt="github" class="biggerIcon"
           /></a>
           <div class="tileTextContainer">
-            <div class="tileTitle">
+            <div class="tileTitle eventPopup">
               <h1>${tile.title}</h1>
-              <a href=${tile.directLink} class="playButton" target="blank"
-                ><img src="./assets/icons/external-link.svg"
-              /></a>
             </div>
-            <p class="tileText">
+            <p class="tileText eventPopup">
               ${tile.smallDescription}
             </p>
           </div>
-          <div class="tileTechno">
+          <div class="tileTechno eventPopup">
             ${tile.technoHTML()}
           </div>
         </div>
@@ -124,11 +123,12 @@ function generateOneTile(tileId) {
 function handleClosePopup(e) {
   if (e.target.id === 'popup' || e.target.id === 'closePopup') {
     popup.hide();
+    document.body.style.overflow = 'auto'; //
   }
 }
 
 function setPopupListener() {
-  let projectTiles = Array.from(document.getElementsByClassName('projectTile'));
+  let projectTiles = Array.from(document.getElementsByClassName('eventPopup'));
   projectTiles.forEach((x) => x.addEventListener('click', handleTileClick));
   document.getElementById('popup').addEventListener('click', handleClosePopup);
 }

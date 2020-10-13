@@ -16,24 +16,21 @@
 #innerContainer {
   position: relative;
   width: 80%;
+  max-width: 1280px;
   height: 80%;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
   border-radius: 20px;
-  animation: popup 0.1s;
+  animation: popup 0.2s;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 @keyframes popup {
   from {
-    width: 60%;
-    height: 60%;
     opacity: 0;
   }
   to {
-    width: 80%;
-    height: 80%;
     opacity: 1;
   }
 }
@@ -79,17 +76,23 @@
   overflow-y: auto;
 }
 
+.popupMainContainer p {
+  margin-bottom: 1em;
+}
+
 #popupImages {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-  max-height: 600px;
   overflow-y: auto;
+  max-height: 600px;
 }
 
 .popupImage {
-  width: 250px;
+  width: 40%;
+  min-width: 300px;
+  max-width: 500px;
   height: auto;
   flex-grow: 1;
   margin: 10px;
