@@ -11,6 +11,8 @@ const popup = {
   popupDiv: document.getElementById('popup'),
   hide() {
     this.popupDiv.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    popupDiv.scrollTop = 0; // init scroll value
   },
   show() {
     this.popupDiv.style.display = 'flex';
@@ -85,9 +87,8 @@ function generateOneTile(tileId) {
     technoHTML() {
       return this.techno
         .map(
-          (index) => `<div class="technoBullet boxShadow">
+          (index) => `<div class="tileTechnoBullet">
       <img src=${technoSource[index][1]} alt=${technoSource[index][0]} class="miniIcon" />
-      <h5>${technoSource[index][0]}</h5>
     </div>`
         )
         .join('');
@@ -95,7 +96,7 @@ function generateOneTile(tileId) {
   };
 
   return `
-  <div id=${tileId} class="projectTile eventPopup">
+  <div id=${tileId} class="projectTile eventPopup overeffect">
           <div class="tileVideoContainer">
             <video autoplay muted loop>
               <source src=${tile.video} type="video/mp4" />
@@ -134,7 +135,7 @@ function setPopupListener() {
 }
 
 function openXpSection() {
-  const xpSection = document.getElementById('asideXpSection');
+  const xpSection = document.getElementById('backgroundKnowledge');
   const button = document.getElementById('buttonAsideXpIcon');
   xpSection.classList.toggle('minimizeSection');
   button.classList.toggle('rotate180Button');

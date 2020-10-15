@@ -1,7 +1,8 @@
 html {
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f4;
-  background-image: url('../assets/inspiration-geometry.png');
+  background-image: url('https://www.transparenttextures.com/patterns/old-mathematics.png');
+
   color: #444;
   line-height: 1.5rem;
 }
@@ -29,7 +30,7 @@ h3 {
 
 h4 {
   font-size: 1rem;
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
 }
 
 h5 {
@@ -62,11 +63,12 @@ strong {
 body {
   position: relative;
   display: grid;
-  grid-template: 250px 1fr / minmax(360px, 1fr) 4fr; /* rows / columns */
+  grid-template: 200px 1fr / minmax(360px, 1fr) 4fr; /* rows / columns */
   grid-template-areas:
     'header header'
     'aside main';
   overflow: auto;
+  min-width: 300px;
 }
 
 a {
@@ -99,15 +101,15 @@ a:active {
 }
 
 .littleIcon {
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.2em;
+  height: 1.2em;
   margin: 0 0.2em;
   opacity: 0.7;
 }
 
 .mediumIcon {
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.2em;
+  height: 1.2em;
   margin: 0 0.5em;
   opacity: 0.7;
 }
@@ -131,22 +133,33 @@ a:active {
   padding-bottom: 3px;
 }
 
-.mediumIcon:hover {
-  opacity: 0.9;
-}
-
-.boxShadow {
+/* .boxShadow {
   box-shadow: 0 0.45rem 0.9rem 0 rgba(44, 51, 73, 0.2);
+} */
+
+.tileTechnoBullet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  background-color: #ffffff49;
+  border-radius: 50%;
+  /* padding: 0.2em 0.5em; */
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 /* ------------------------- */
 
 header {
   grid-area: header;
-  background-image: url('../assets/banner.png');
-  background-size: cover;
-  background-position: center;
-  border-bottom: 10px solid #85b5ff;
+  /* background-image: url('../assets/banner.png'); */
+  /* background-size: cover;
+  background-position: center; */
+  background-color: #311fbf;
+  background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
+  border-bottom: 3px solid #cbc6ee;
   overflow: hidden;
 }
 /* ------------------------- */
@@ -168,6 +181,13 @@ aside {
   box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
 }
 
+.asideTopContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .asideSection {
   width: 100%;
   height: auto;
@@ -177,8 +197,13 @@ aside {
   overflow: hidden;
 }
 
+#backgroundKnowledge {
+  overflow: hidden;
+  transition: height 0.2s;
+}
+
 .minimizeSection {
-  height: 200px;
+  height: 0px;
 }
 
 #buttonAsideXp {
@@ -227,22 +252,26 @@ aside {
   padding: 0.2em 0.5em;
   margin-right: 10px;
   margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .asideTitle {
   position: relative;
   margin-left: 0.6em;
+  margin-top: 0.4em;
+  padding-left: 0.5em;
 }
 
 .asideTitle::after {
   position: absolute;
-  bottom: 0.9em;
+  bottom: 0.85em;
   left: -0.6em;
   content: ' ';
   display: block;
-  width: 0.3em;
-  height: 0.3em;
-  background-color: hotpink;
+  width: 0.5em;
+  height: 0.5em;
+  background-color: #311fbf;
   border-radius: 2px;
 }
 
@@ -257,15 +286,7 @@ aside {
   border-radius: 50%;
   margin-top: -60px;
   margin-bottom: 20px;
-  box-shadow: 0 0.45rem 0.9rem 0 rgba(44, 51, 73, 0.2);
-}
-
-#asideLinkBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1em;
-  padding: 1em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 #technoSection {
@@ -276,6 +297,59 @@ aside {
   margin-top: 0.4em;
 }
 
+.asideLinkBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em 0.5em;
+  width: 20%;
+  flex-wrap: wrap;
+}
+
+#asideLeftLinkBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#asideRightLinkBox {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.asideLinkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background-color: lavender;
+  margin: 0.2em;
+  flex-shrink: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.asideLinkContainer:hover {
+  opacity: 0.9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.asideTesti {
+  position: relative;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.2em;
+  padding: 20px;
+  margin-top: 1em;
+  color: #ffffff;
+  background-color: #4e3fc1;
+  background-image: url('https://www.transparenttextures.com/patterns/subtle-carbon.png');
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
 /* ------------------------- */
 
 main {
@@ -283,9 +357,9 @@ main {
   margin-top: 1em;
 }
 
-#projectContainer {
+.projectContainer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   /* margin: 10px; */
   flex-wrap: wrap;
@@ -297,22 +371,34 @@ main {
   display: flex;
   flex-direction: column;
   padding: 20px 20px 10px 20px;
-  justify-content: space-between;
-  min-width: 380px;
-  max-width: 680px;
+  justify-content: center;
+  align-items: center;
+  min-width: 340px;
+  /* max-width: 680px; */
   flex-basis: 25%;
-  min-height: 380px;
+  min-height: 300px;
   flex-grow: 1;
-  margin-bottom: 20px;
-  margin-right: 20px;
+  margin-bottom: 40px;
+  margin-right: 30px;
+  margin-left: 10px;
   background-color: #bbb;
   border-radius: 10px;
-  border-top-right-radius: 0;
-  box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
-  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.projectTile::after {
+.minor {
+  min-height: 120px;
+  /* max-width: 500px; */
+}
+
+.overeffect {
+  cursor: pointer;
+  border-top-right-radius: 0;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.overeffect::after {
   z-index: 5;
   content: '';
   display: block;
@@ -321,8 +407,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, #5989e5, #37cfdc);
-
+  background: linear-gradient(180deg, #5040c4, #ffffff);
   opacity: 0;
   transition: all 0.2s ease-in-out;
 }
@@ -336,12 +421,11 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgb(0, 0, 0);
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.5) 0%,
     rgba(255, 255, 255, 0) 50%,
-    rgba(0, 0, 0, 0.4) 100%
+    rgba(0, 0, 0, 0) 100%
   );
 }
 
@@ -358,6 +442,11 @@ main {
   align-items: center;
 }
 
+.center {
+  justify-content: center;
+  text-align: center;
+}
+
 .tileTextContainer {
   z-index: 10;
   width: 85%;
@@ -369,6 +458,10 @@ main {
   overflow: hidden;
   opacity: 0;
   transition: all 0.2s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
 }
 
 .tileTechno {
@@ -391,7 +484,6 @@ main {
   top: -60px;
   transform: rotate(45deg);
   cursor: pointer;
-  /* transition: all 0.25s; */
 }
 
 .tileGithub {
@@ -399,6 +491,12 @@ main {
   position: absolute;
   top: 10px;
   right: 10px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.tileGithub:hover {
+  opacity: 1;
 }
 
 .tileVideoContainer {
@@ -411,11 +509,33 @@ main {
   height: 100%;
 }
 
+.tileVideoContainer img {
+  object-fit: cover;
+}
+
+.mainTitleCont {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1em;
+  /* margin-top: -1em; */
+}
+
+.mainTitleLine {
+  flex-grow: 1;
+
+  border-bottom: 5px dotted #6255c2;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0.5em;
+}
+
 /* ------------------------- */
 
 @media screen and (max-width: 800px) {
   body {
-    grid-template: 250px auto 3fr / 100%; /* rows / columns */
+    grid-template: 200px auto 3fr / 100%; /* rows / columns */
     grid-template-areas:
       'header'
       'aside'
@@ -423,11 +543,17 @@ main {
   }
 
   main {
-    margin-left: 20px;
+    margin-left: 10px;
+  }
+
+  aside {
+    padding: 10px;
   }
 
   .projectTile {
     flex-basis: 80%;
     min-width: 300px;
+    margin-right: 10px;
+    margin-left: 0;
   }
 }

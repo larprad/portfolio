@@ -73,7 +73,7 @@ de couleur.
 </ul>
 <p>
 Une fois le bloc cliqué, en plus de sa couleur, son symbole permutera pour
-devenir <strong>X</strong> ou <strong>O</strong>
+devenir <strong>X</strong> ou <strong>O</strong>.
 </p>
 <p>
 2 modes de jeu sont disponibles :
@@ -83,7 +83,7 @@ devenir <strong>X</strong> ou <strong>O</strong>
 <li><strong>Challenge</strong>, où le joueur devra choisir entre 4 difficultés. Le taille de la
 grille est fixée en fonction de la difficulté ainsi que le nombre de clics
 maximum pour arriver à la victoire.`,
-    smallDescription: "Jeu d'énigmes générées procéduralement",
+    smallDescription: "Jeu d'énigmes générées procéduralement.",
     link: [
       ['Github', 'https://github.com/larprad/squaresquaresquare'],
       ['Lien direct', 'https://larprad.github.io/squaresquaresquare/'],

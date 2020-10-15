@@ -45,27 +45,37 @@
     <header></header>
     <aside>
       <div id="asideContainer">
-        <img src="assets/face.png" id="pictureAside" alt="profil picture" />
+        <img src="assets/face2.png" id="pictureAside" alt="profil picture" />
+        <div id="asideLeftLinkBox" class="asideLinkBox">
+          <a href="https://github.com/larprad" target="blank" class="asideLinkContainer"
+            ><img src="./assets/icons/github.svg" alt="github" class="mediumIcon"
+          /></a>
+          <a href="https://codepen.io/Larprad" target="blank" class="asideLinkContainer"
+            ><img src="./assets/icons/codepen.svg" alt="codepen" class="mediumIcon"
+          /></a>
+        </div>
+        <div id="asideRightLinkBox" class="asideLinkBox">
+          <a
+            href="https://www.linkedin.com/in/loic-la-prairie-833771a8/"
+            target="blank"
+            class="asideLinkContainer"
+            ><img src="./assets/icons/linkedin-square.svg" alt="linkedin" class="mediumIcon"
+          /></a>
+          <a href="https://twitter.com/Larprad1" target="blank" class="asideLinkContainer"
+            ><img src="./assets/icons/twitter.svg" alt="twitter" class="mediumIcon"
+          /></a>
+        </div>
         <h2>Loïc La Prairie</h2>
         <h4>Dévelopeur Front-End Autodidacte</h4>
         <p>
           <img src="./assets/icons/address-location.svg" class="littleIcon" alt="addresse" />
           Rennes, France
         </p>
-        <section id="asideLinkBox">
-          <a href="https://github.com/larprad" target="blank"
-            ><img src="./assets/icons/github.svg" alt="github" class="mediumIcon"
-          /></a>
-          <a href="https://www.linkedin.com/in/loic-la-prairie-833771a8/" target="blank"
-            ><img src="./assets/icons/linkedin-square.svg" alt="linkedin" class="mediumIcon"
-          /></a>
-          <a href="https://codepen.io/your-work" target="blank"
-            ><img src="./assets/icons/codepen.svg" alt="codepen" class="mediumIcon"
-          /></a>
-          <a href="https://twitter.com/Larprad1" target="blank"
-            ><img src="./assets/icons/twitter.svg" alt="twitter" class="mediumIcon"
-          /></a>
-        </section>
+        <h5 class="asideTesti">
+          Ingénieur en reconversion, je suis à la recherche d'un premier poste salarié lequel je
+          pourrai apporter ma créativité et mes compétences techniques, tout en solidifiant ma
+          formation de dévelopeur.
+        </h5>
         <section class="asideSection">
           <h3 class="asideTitle">TECHNOLOGIES</h3>
           <div id="technoSection">
@@ -91,66 +101,109 @@
             </div>
           </div>
         </section>
-        <section id="asideXpSection" class="asideSection minimizeSection">
-          <h3 class="asideTitle">EXPERIENCES</h3>
-          <button id="buttonAsideXp">
-            <img
-              id="buttonAsideXpIcon"
-              class="buttonAsideXpIcon"
-              src="./assets/icons/double-arrow-bottom.svg"
-              alt="see more"
-            />
-          </button>
-          <div class="xpSection">
-            <div class="xpTitle">
-              <h6 class="lowYPadding">2019 - 2020</h6>
-              <h3 class="bold lowYPadding">Auto-Entrepreneur</h3>
-              <h4 class="bold lowYPadding">Développeur Web</h4>
+        <section id="backgroundKnowledge" class="minimizeSection">
+          <section class="asideSection">
+            <h3 class="asideTitle">EXPERIENCES RECENTES</h3>
+            <button id="buttonAsideXp">
+              <img
+                id="buttonAsideXpIcon"
+                class="buttonAsideXpIcon"
+                src="./assets/icons/double-arrow-bottom.svg"
+                alt="see more"
+              />
+            </button>
+            <div class="xpSection">
+              <div class="xpTitle">
+                <h6 class="lowYPadding">2019 - En cours</h6>
+                <h3 class="bold lowYPadding">Préparation titre RNCP 5</h3>
+                <h4 class="bold lowYPadding">Dévelopeur Web</h4>
+              </div>
+              <div class="xpText">
+                <p class="dim">
+                  Formation auto-didacte et réalisation de plusieurs projets commissionnés.
+                </p>
+              </div>
             </div>
-            <div class="xpText">
-              <p class="dim">
-                Formation auto-didacte et réalisation de plusieurs projets commissionnés.
-              </p>
+            <div class="xpSection">
+              <div class="xpTitle">
+                <h6 class="lowYPadding">2015 - 2019</h6>
+                <h3 class="bold lowYPadding">SOFTBANK Robotics</h3>
+                <h4 class="bold lowYPadding">Manageur services et solutions robotiques</h4>
+              </div>
+              <div class="xpText">
+                <p class="dim">
+                  Encadrement d'une équipe de développeurs Web et rédacteurs techniques. Responsable
+                  de la création de
+                  <a href="https://www.softbankrobotics.com/emea/fr/support" target="blank"
+                    >la section support du site SoftBank Robotics</a
+                  >
+                  et de la base de connaissances interne.
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="xpSection">
-            <div class="xpTitle">
-              <h6 class="lowYPadding">2015 - 2019</h6>
-              <h3 class="bold lowYPadding">SOFTBANK Robotics</h3>
-              <h4 class="bold lowYPadding">Manageur services et solutions robotiques</h4>
+          </section>
+          <section class="asideSection">
+            <h3 class="asideTitle">FORMATION</h3>
+            <div>
+              <div class="xpTitle">
+                <h6 class="lowYPadding">2004</h6>
+                <h3 class="bold lowYPadding">Diplôme Ingénieur Généraliste</h3>
+                <h4 class="bold lowYPadding">Ecole Nationale d'ingénieurs de Brest</h4>
+              </div>
+              <div class="xpText">
+                <p class="dim">Informatique / Mécanique / Eléctronique</p>
+              </div>
             </div>
-            <div class="xpText">
-              <p class="dim">
-                Encadrement d'une équipe de développeurs Web. Responsable de la création de
-                <a href="https://www.softbankrobotics.com/emea/fr/support" target="blank"
-                  >la section support du site SoftBank Robotics</a
-                >
-                et de la base de connaissances interne.
-              </p>
-            </div>
-          </div>
-          <div class="xpSection">
-            <div class="xpTitle">
-              <h6 class="lowYPadding">2013 - 2014</h6>
-              <h3 class="bold lowYPadding">Traversée des Amériques</h3>
-              <h4 class="bold lowYPadding">Voyageur</h4>
-            </div>
-            <div class="xpText">
-              <p class="dim">
-                Descente par la terre et la mer des Amériques, du Canada jusqu’en Patagonie, en
-                solitaire, principalement en auto-stop. Réalisation régulière de
-                <a href="http://ventsdameriques.tumblr.com" target="blank"
-                  >reportages audio-visuels & rédaction d’articles</a
-                >.
-              </p>
-            </div>
-          </div>
+          </section>
         </section>
       </div>
     </aside>
     <main>
-      <h3 class="asideTitle">PROJETS</h3>
-      <div id="projectContainer"></div>
+      <div>
+        <div class="mainTitleCont">
+          <h3 class="asideTitle">PROJETS DEVELOPEMENT WEB</h3>
+          <div class="mainTitleLine"></div>
+        </div>
+
+        <div id="projectContainer" class="projectContainer"></div>
+      </div>
+      <div>
+        <div class="mainTitleCont">
+          <h3 class="asideTitle">AUTRES PROJETS</h3>
+          <div class="mainTitleLine"></div>
+        </div>
+
+        <div class="projectContainer">
+          <div class="projectTile minor">
+            <div class="tileVideoContainer">
+              <img src="./assets/screenshots/vendam.png" alt="Image Vents d'Amériques" />
+            </div>
+            <div class="tileTextContainer">
+              <div class="tileTitle center">
+                <a href="https://ventsdameriques.tumblr.com/" target="blank"
+                  ><h1>Vents d'Amériques</h1></a
+                >
+              </div>
+              <p class="tileText visible center">
+                Traversée des Amériques par voie terrestre majoritairement en autostop.
+              </p>
+            </div>
+          </div>
+          <div class="projectTile minor">
+            <div class="tileVideoContainer">
+              <img src="./assets/screenshots/rienavoir.png" alt="Rien à Voir" />
+            </div>
+            <div class="tileTextContainer">
+              <div class="tileTitle center">
+                <a href="https://unrienavoir.tumblr.com/" target="blank"><h1>Rien à Voir</h1></a>
+              </div>
+              <p class="tileText visible center">
+                Une photo par jour, prise ce même jour, pendant 1 an.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>
