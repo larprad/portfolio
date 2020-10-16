@@ -12,7 +12,7 @@ const popup = {
   hide() {
     this.popupDiv.style.display = 'none';
     document.body.style.overflow = 'auto';
-    popupDiv.scrollTop = 0; // init scroll value
+    this.popupDiv.scrollTop = 0; // init scroll value
   },
   show() {
     this.popupDiv.style.display = 'flex';
@@ -121,17 +121,23 @@ function generateOneTile(tileId) {
   `;
 }
 
-function handleClosePopup(e) {
-  if (e.target.id === 'popup' || e.target.id === 'closePopup') {
-    popup.hide();
-    document.body.style.overflow = 'auto'; //
+function handleClosePopup() {
+  popup.hide();
+  document.body.style.overflow = 'auto'; //
+}
+
+function handleOutsideClosePopup(e) {
+  if (e.target.id === 'popup') {
+    handleClosePopup();
   }
 }
 
 function setPopupListener() {
   let projectTiles = Array.from(document.getElementsByClassName('eventPopup'));
   projectTiles.forEach((x) => x.addEventListener('click', handleTileClick));
-  document.getElementById('popup').addEventListener('click', handleClosePopup);
+  document.getElementById('closePopup').addEventListener('click', handleClosePopup);
+  document.getElementById('popup').addEventListener('click', handleOutsideClosePopup);
+  document.getElementById('buttonAsideXp').addEventListener('click', openXpSection);
 }
 
 function openXpSection() {
@@ -140,8 +146,6 @@ function openXpSection() {
   xpSection.classList.toggle('minimizeSection');
   button.classList.toggle('rotate180Button');
 }
-
-document.getElementById('buttonAsideXp').addEventListener('click', openXpSection);
 
 // -----------------------------------
 

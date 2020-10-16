@@ -1,8 +1,7 @@
 html {
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f4;
-  background-image: url('https://www.transparenttextures.com/patterns/old-mathematics.png');
-
+  background-image: url('../assets/asfalt-dark.png');
   color: #444;
   line-height: 1.5rem;
 }
@@ -69,6 +68,7 @@ body {
     'aside main';
   overflow: auto;
   min-width: 300px;
+  min-height: 100vh;
 }
 
 a {
@@ -115,8 +115,8 @@ a:active {
 }
 
 .biggerIcon {
-  width: 2em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
   opacity: 0.7;
 }
 
@@ -158,7 +158,7 @@ header {
   /* background-size: cover;
   background-position: center; */
   background-color: #311fbf;
-  background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
+  background-image: url('../assets/flowers.png');
   border-bottom: 3px solid #cbc6ee;
   overflow: hidden;
 }
@@ -167,6 +167,7 @@ header {
 aside {
   grid-area: aside;
   padding: 20px;
+  margin-bottom: 4em;
 }
 
 #asideContainer {
@@ -177,6 +178,7 @@ aside {
   width: 100%;
   margin-top: -120px;
   background-color: white;
+  background-image: url('../assets/ice-age.png');
   border-radius: 20px;
   box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
 }
@@ -222,6 +224,7 @@ aside {
   outline: none;
   transition: all 0.2s ease-in-out;
   background-color: white;
+  background-image: url('../assets/ice-age.png');
 }
 
 #buttonAsideXp:hover .buttonAsideXpIcon {
@@ -346,7 +349,7 @@ aside {
   margin-top: 1em;
   color: #ffffff;
   background-color: #4e3fc1;
-  background-image: url('https://www.transparenttextures.com/patterns/subtle-carbon.png');
+  background-image: url('../assets/subtle-carbon.png');
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -355,11 +358,12 @@ aside {
 main {
   grid-area: main;
   margin-top: 1em;
+  margin-bottom: 4em;
 }
 
 .projectContainer {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   /* margin: 10px; */
   flex-wrap: wrap;
@@ -374,7 +378,7 @@ main {
   justify-content: center;
   align-items: center;
   min-width: 340px;
-  /* max-width: 680px; */
+  max-width: 550px;
   flex-basis: 25%;
   min-height: 300px;
   flex-grow: 1;
@@ -476,12 +480,12 @@ main {
 
 .tileTriangle {
   z-index: 10;
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   background-color: white;
   position: absolute;
-  right: -60px;
-  top: -60px;
+  right: -45px;
+  top: -45px;
   transform: rotate(45deg);
   cursor: pointer;
 }
@@ -489,8 +493,8 @@ main {
 .tileGithub {
   z-index: 10;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
   opacity: 0.7;
   transition: opacity 0.2s ease-in-out;
 }
@@ -529,6 +533,22 @@ main {
   margin-left: 1em;
   margin-right: 1em;
   margin-top: 0.5em;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444;
+  border-top: 5px solid #bdffe0;
+  padding: 0.8em;
+  font-size: 0.8em;
+  margin-top: 3em;
+  color: rgba(255, 255, 255, 0.555);
 }
 
 /* ------------------------- */
