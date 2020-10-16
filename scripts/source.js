@@ -39,7 +39,7 @@ const apps = {
 
   oneWordPlease: {
     title: 'One Word Please',
-    description: `<p>L’utilisateur tape un mot de son choix (en anglais), en fonction des différentes options cochées sur le panel de gauche il obtiendra en résultat des mots qui : </p> <ul> <li>riment <li>ont une sonorité similaire <li>ont le même signification <li>sont usuellement utilisés pour décrire le mot choisi <li>en sont l’opposé </li> </ul> <p> Il est possible de cumuler plusieurs de ces options, ce qui mécaniquement fera diminuer le nombre de résultats. </p> <p> L’utilisateur peut ensuite sauvegarder des mots affichés en résultats. Ils seront conservés lors des prochaines recherches. </p>`,
+    description: `<p>L’utilisateur tape un mot de son choix (en anglais), en fonction des différentes options cochées sur le panel de gauche il obtiendra en résultat des mots qui : riment, ont une sonorité similaire, ont le même signification, sont usuellement utilisés pour décrire le mot choisi ou en sont l’opposé.<p> Il est possible de cumuler plusieurs de ces options, ce qui mécaniquement fera diminuer le nombre de résultats. </p> <p> L’utilisateur peut ensuite sauvegarder des mots affichés en résultats. Ils seront conservés lors des prochaines recherches. </p>`,
     smallDescription:
       "Un outil d'aide à l'écriture réalisé en React JS. il permet de trouver et sauvegarder rapidement des synonymes, homonymes, antonymes d'un ou plusieurs mots.",
     link: [
