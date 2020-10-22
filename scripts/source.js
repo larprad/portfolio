@@ -115,7 +115,7 @@ maximum pour arriver à la victoire.`,
       ['Github', 'https://github.com/larprad/monsters'],
       ['Lien direct', 'https://mythicalmonsters.herokuapp.com/'],
     ],
-    techno: ['react', 'node', 'js', 'css', 'html'],
+    techno: ['react', 'node', 'sql', 'js', 'css', 'html'],
     video: './assets/videos/monsters.mp4',
     image: [
       './assets/screenshots/monsters_1.png',
@@ -144,4 +144,5 @@ const technoSource = {
   html: ['HTML5', './assets/icons/html.svg'],
   react: ['REACT', './assets/icons/react-js.svg'],
   node: ['NODE JS', './assets/icons/node-js.svg'],
+  sql: ['SQL', './assets/icons/sql-server.svg'],
 };
