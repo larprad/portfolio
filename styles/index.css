@@ -524,10 +524,12 @@ main {
   left: 50%;
   transform: translateX(-50%);
   height: 100%;
+  width: 100%;
 }
 
 .tileVideoContainer img {
-  object-fit: cover;
+  width: 100%;
+ object-fit: cover;
 }
 
 .mainTitleCont {
