@@ -1,22 +1,20 @@
-// llp_test.surge.sh
-
-console.log('Hello there ✋');
+console.log("Oh! Hello there ✋");
 
 const popup = {
-  title: document.getElementById('popupTitle'),
-  description: document.getElementById('popupDescription'),
-  techno: document.getElementById('popupTechnoSection'),
-  image: document.getElementById('popupImages'),
-  link: document.getElementById('popupLinkSection'),
-  popupDiv: document.getElementById('popup'),
+  title: document.getElementById("popupTitle"),
+  description: document.getElementById("popupDescription"),
+  techno: document.getElementById("popupTechnoSection"),
+  image: document.getElementById("popupImages"),
+  link: document.getElementById("popupLinkSection"),
+  popupDiv: document.getElementById("popup"),
   hide() {
-    this.popupDiv.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    this.popupDiv.style.display = "none";
+    document.body.style.overflow = "auto";
     this.popupDiv.scrollTop = 0; // init scroll value
   },
   show() {
-    this.popupDiv.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; //disable main page scrolling
+    this.popupDiv.style.display = "flex";
+    document.body.style.overflow = "hidden"; //disable main page scrolling
   },
   setTitle(x) {
     this.title.innerHTML = x;
@@ -31,7 +29,7 @@ const popup = {
       <h5>${technoSource[index][0]}</h5>
     </div>`
     );
-    this.techno.innerHTML = technoArray.join('');
+    this.techno.innerHTML = technoArray.join("");
   },
   setLink(x) {
     const linkArray = x.map(
@@ -40,20 +38,22 @@ const popup = {
       <a href=${index[1]} target="blank">${index[1]}</a>
     </div>`
     );
-    this.link.innerHTML = '<h4 class="popupSubTitle">Liens</h4>' + linkArray.join('');
+    this.link.innerHTML =
+      '<h4 class="popupSubTitle">Liens</h4>' + linkArray.join("");
   },
   setImages(x, tileName) {
     const imagesArray = x.map(
-      (index) => `<img class="popupImage" src=${index} alt="${tileName} image" />`
+      (index) =>
+        `<img class="popupImage" src=${index} alt="${tileName} image" />`
     );
-    this.image.innerHTML = imagesArray.join('');
+    this.image.innerHTML = imagesArray.join("");
   },
   clean() {
-    this.title.innerHTML = '';
-    this.description.innerHTML = '';
-    this.link.innerHTML = '';
-    this.techno.innerHTML = '';
-    this.image.innerHTML = '';
+    this.title.innerHTML = "";
+    this.description.innerHTML = "";
+    this.link.innerHTML = "";
+    this.techno.innerHTML = "";
+    this.image.innerHTML = "";
   },
 };
 
@@ -72,8 +72,8 @@ function handleTileClick(e) {
 
 function initProjectTiles() {
   const projects = Object.entries(apps).map((x) => generateOneTile(x[0]));
-  const projectDiv = document.getElementById('projectContainer');
-  projectDiv.innerHTML = projects.join('');
+  const projectDiv = document.getElementById("projectContainer");
+  projectDiv.innerHTML = projects.join("");
 }
 
 function generateOneTile(tileId) {
@@ -91,7 +91,7 @@ function generateOneTile(tileId) {
       <img src=${technoSource[index][1]} alt=${technoSource[index][0]} class="miniIcon" />
     </div>`
         )
-        .join('');
+        .join("");
     },
   };
 
@@ -123,28 +123,34 @@ function generateOneTile(tileId) {
 
 function handleClosePopup() {
   popup.hide();
-  document.body.style.overflow = 'auto'; //
+  document.body.style.overflow = "auto"; //
 }
 
 function handleOutsideClosePopup(e) {
-  if (e.target.id === 'popup') {
+  if (e.target.id === "popup") {
     handleClosePopup();
   }
 }
 
 function setPopupListener() {
-  let projectTiles = Array.from(document.getElementsByClassName('eventPopup'));
-  projectTiles.forEach((x) => x.addEventListener('click', handleTileClick));
-  document.getElementById('closePopup').addEventListener('click', handleClosePopup);
-  document.getElementById('popup').addEventListener('click', handleOutsideClosePopup);
-  document.getElementById('buttonAsideXp').addEventListener('click', openXpSection);
+  let projectTiles = Array.from(document.getElementsByClassName("eventPopup"));
+  projectTiles.forEach((x) => x.addEventListener("click", handleTileClick));
+  document
+    .getElementById("closePopup")
+    .addEventListener("click", handleClosePopup);
+  document
+    .getElementById("popup")
+    .addEventListener("click", handleOutsideClosePopup);
+  document
+    .getElementById("buttonAsideXp")
+    .addEventListener("click", openXpSection);
 }
 
 function openXpSection() {
-  const xpSection = document.getElementById('backgroundKnowledge');
-  const button = document.getElementById('buttonAsideXpIcon');
-  xpSection.classList.toggle('minimizeSection');
-  button.classList.toggle('rotate180Button');
+  const xpSection = document.getElementById("backgroundKnowledge");
+  const button = document.getElementById("buttonAsideXpIcon");
+  xpSection.classList.toggle("minimizeSection");
+  button.classList.toggle("rotate180Button");
 }
 
 // -----------------------------------

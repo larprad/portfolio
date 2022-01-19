@@ -1,7 +1,7 @@
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f4f4f4;
-  background-image: url('../assets/asfalt-dark.png');
+  background-image: url("../assets/asfalt-dark.png");
   color: #444;
   line-height: 1.5rem;
 }
@@ -64,8 +64,8 @@ body {
   display: grid;
   grid-template: 200px 1fr / minmax(360px, 1fr) 4fr; /* rows / columns */
   grid-template-areas:
-    'header header'
-    'aside main';
+    "header header"
+    "aside main";
   overflow: auto;
   min-width: 300px;
   min-height: 100vh;
@@ -171,7 +171,7 @@ header {
   /* background-size: cover;
   background-position: center; */
   background-color: #311fbf;
-  background-image: url('../assets/flowers.png');
+  background-image: url("../assets/flowers.png");
   border-bottom: 3px solid #cbc6ee;
   overflow: hidden;
 }
@@ -191,7 +191,7 @@ aside {
   width: 100%;
   margin-top: -120px;
   background-color: white;
-  background-image: url('../assets/ice-age.png');
+  background-image: url("../assets/ice-age.png");
   border-radius: 20px;
   box-shadow: 0 0.9rem 1.8rem 0 rgba(44, 51, 73, 0.2);
 }
@@ -237,7 +237,7 @@ aside {
   outline: none;
   transition: all 0.2s ease-in-out;
   background-color: white;
-  background-image: url('../assets/ice-age.png');
+  background-image: url("../assets/ice-age.png");
 }
 
 #buttonAsideXp:hover .buttonAsideXpIcon {
@@ -255,7 +255,8 @@ aside {
   transform: rotate(180deg);
 }
 
-.xpSection {
+.xpSection,
+.formSection {
   margin-bottom: 1em;
 }
 
@@ -283,7 +284,7 @@ aside {
   position: absolute;
   bottom: 0.85em;
   left: -0.6em;
-  content: ' ';
+  content: " ";
   display: block;
   width: 0.5em;
   height: 0.5em;
@@ -353,6 +354,7 @@ aside {
 }
 
 .asideTesti {
+  width: 100%;
   position: relative;
   text-align: center;
   font-size: 1.1em;
@@ -362,7 +364,7 @@ aside {
   margin-top: 1em;
   color: #ffffff;
   background-color: #4e3fc1;
-  background-image: url('../assets/subtle-carbon.png');
+  background-image: url("../assets/subtle-carbon.png");
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -417,7 +419,7 @@ main {
 
 .overeffect::after {
   z-index: 5;
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -430,7 +432,7 @@ main {
 }
 
 .projectTile::before {
-  content: '';
+  content: "";
   display: block;
   z-index: 3;
   position: absolute;
@@ -520,6 +522,7 @@ main {
   z-index: 1;
   position: absolute;
   display: flex;
+  justify-content: center;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -529,7 +532,7 @@ main {
 
 .tileVideoContainer img {
   width: 100%;
- object-fit: cover;
+  object-fit: cover;
 }
 
 .mainTitleCont {
@@ -572,9 +575,9 @@ footer {
   body {
     grid-template: 200px auto 3fr / 100%; /* rows / columns */
     grid-template-areas:
-      'header'
-      'aside'
-      'main';
+      "header"
+      "aside"
+      "main";
   }
 
   main {
